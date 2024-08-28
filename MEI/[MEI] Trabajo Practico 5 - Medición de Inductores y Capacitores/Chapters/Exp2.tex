@@ -1,0 +1,90 @@
+\label{sec:exp2}
+De manera similar a la sección~\ref{sec:exp1}, en este experimento se nos planteo determinar los valores de los componentes planteados en nuestro modelo para una serie de distintos capacitores. Se redujo la resistencia $R_g$ del circuito anterior debido a que el componente resistivo es menor, dejando la resistencia en $R_g=1~k\Omega$. Se modifico la señal de entrada a una señal cuadrada para facilitar las medición. Ya que, como se explico en la sección~\ref{sec:Cap}, la señal en tensión resultante de este planteamiento sera una señal triangular (debido al efecto integrador de corriente del capacitor) sumada a la misma señal cuadrada (debido al efecto de la resistencia interna del capacitor), se podrá discernir y estimar los distintos componentes a través de la medición la señal a bornes del capacitor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Imagenes/exp2.png}
+    \caption{Circuito experimento 2}
+    \label{fig:exp2}
+\end{figure}
+
+Según lo anteriormente explicado podemos plantear los siguiente:
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.59\textwidth}
+        \input{Plots/Capa/Cuad}
+        \label{fig:enter-label}
+    \end{minipage}
+    \begin{minipage}{0.29\textwidth}
+       \input{Plots/Capa/CircuExp2}
+\end{minipage}
+\caption{Análisis del circuito equivalente de un capacitor}
+\end{figure}
+Tomando los valores de los tramos de la señal correspondiente a los distintos componentes, se pude calcular el valor de la resistencia de la siguiente manera:
+\begin{equation}
+    r_c=\frac{v_r}{i}
+\end{equation}
+
+\unsubsubsection{Mediciones}
+La señal cuadrada utilizada fue establecida en los siguientes valores: 
+\begin{itemize}
+    \item $V_{pp}=20~V$
+    \item  $F_{rec}=10 ~KHz$
+\end{itemize}
+
+Se procedió a medir sobre los puntos establecidos, obteniendo los siguientes datos:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Imagenes/MedExp2.jpeg}
+    \caption{Mediciones de la señal de salida vs entrada del experimento 2}
+
+\end{figure}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+        $f$ & \multicolumn{3}{c|}{$10~kHz$}\\
+    \hline
+        $C_{nom}$ & $1~\mu F$ & $2.2~\mu F$ & $4.7~\mu F$ \\ 
+    \hline
+        $r$ & \multicolumn{3}{c|}{$1~k\Omega$}\\
+    \hline
+        $e_{pp}~(Canal~2)[V]$ & 20 & 20 & 20\\
+    %\hline
+        $I=\cfrac{e_{pp}}{r} ~[mA]$ & 18.5 & 18.5 & 18.5 \\
+    %\hline    
+        $e_R~[mV]$ & 36 & 149.85 & 50 \\
+    %\hline    
+        $RSE = \cfrac{e_R}{I} ~[\Omega]$ & 1.94 & 7.3 & 2.7 \\
+    \hline    
+    
+        \end{tabular}
+        \def\tablename{Tabla} 
+        \caption{Tabla de parámetros para distintos capacitores}
+        \label{tab:exp2}
+\end{table}
+
+\unsubsubsection{Comprobación}
+Utilizando un medidor RLC se comprobaron los valores nominales de los 3 capacitores utilizados:
+
+\begin{figure}[H]
+\centering
+    \begin{minipage}{0.29\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={0cm 10cm 0cm 0cm},clip]{Imagenes/MedCap3Exp2.jpeg}
+    \caption*{$C=1~\mu F$}
+    \end{minipage}
+    \hspace*{\fill}
+    \begin{minipage}{0.29\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={0cm 10cm 0cm 0cm},clip]{Imagenes/MedCap1Exp2.jpeg}
+    \caption*{$C=2.2~\mu F$}
+    \end{minipage}
+    \hspace*{\fill}
+    \begin{minipage}{0.29\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,trim={0cm 10cm 0cm 0cm},clip]{Imagenes/MedCap2Exp2.jpeg}
+    \caption*{$C=4.7~\mu F$}
+    \end{minipage}
+    \caption{Mediciones de los capacitores del experimento 2}
+\end{figure}

@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale=1.5]
+
+    \draw[thin,gray!40] (0,-2) grid (4,2);
+    
+    
+    \draw[<->] (0,0)--(4,0) node[right] {$t$};
+    \draw[<->] (0,-2)--(0,2) node[above]{$V$};
+
+    \draw[line width=1pt,black](0,0)--(1,1)--(2,0)--(3,-1)--(4,0);
+    \draw[line width=1pt,black,|-|,dashed](0,1.2)--(4,1.2) node[midway,above]{$T$};
+    \draw[line width=1pt,black,|-|,dashed](1,-0.2)--(2,-0.2) node[midway,below]{$T/4$};
+    
+\end{tikzpicture}

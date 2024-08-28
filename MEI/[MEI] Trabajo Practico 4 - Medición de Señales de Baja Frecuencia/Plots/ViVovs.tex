@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=1]
+\def\scal{1.5}
+        \coordinate (a1) at (0,0);
+        \coordinate (a2) at (2,1.52*\scal);
+        \coordinate (a3) at (4,0.89*\scal);
+        \coordinate (a4) at (6,0.7*\scal);
+        \coordinate (a5) at (8,0.18*\scal);
+        \coordinate (a6) at (10,0.05*\scal);
+        \coordinate (a7) at (12,0);
+
+    \draw[thin,gray!40,ystep=\scal] (0,0) grid (12,4);
+    \draw[<->] (0,0)--(12,0) node[right] {$[^\circ]$};
+    \draw[<->] (0,0)--(0,4) node[above]{$\kappa$};
+
+
+    \foreach \a [evaluate={\y=int(\a*15)}] in {0,2,...,12}{
+        \draw[line width=0.7pt,dotted] (\a,0) node[below]{\footnotesize $\y^\circ$};
+    }
+    \foreach \a [evaluate={\y=int(\a+1)}] in {0,1,...,2}{
+        \draw[line width=0.7pt,dotted] (0,\a*\scal) node[left]{\footnotesize $\y$};
+    }
+    \foreach \a in{1,...,7}{
+       \draw[thin,dashed,black] let \p1=(a\a) in (\x1,0)--(a\a);
+       \draw[line width=1pt,black](a\a) circle(1pt);
+    }
+    \foreach \x [evaluate={\y=int(\x+1);}] in {1,...,6}{
+        \draw[line width=1pt,black] (a\x) -- (a\y);
+   }
+    
+\end{tikzpicture}
+\caption*{Factor de corrección $\kappa=\frac{V_{TRms}}{V_{MRms}}$ }

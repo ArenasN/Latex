@@ -1,0 +1,167 @@
+Continuando con el análisis de las mediciones de un multimetro true RMS, en este experimento se busca comparar nuevamente los valores dados por este multimetro en comparación con uno que brinda el valor medio de la señal, para ello se procedió a medir la forma de onda proveniente de un circuito con control de ángulo de conducción, el cual se puede observar en la figura \ref{fig:circ_triac}
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Imagenes/circ_triac.png}
+    \caption{Circuito Experimento 4: Control de ángulo de conducción}
+    \label{fig:circ_triac}
+\end{figure}
+
+Este circuito se conecto a la tensión de linea y se procedió a conectar los multimetros y el osciloscopio, utilizando siempre el transformador de aislación para evitar inconvenientes que causen daños a los instrumentos. En la figura \ref{fig:conec_exp4}se observa la conexión correcta para realizar la experimentación. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth,trim= 5pt 5pt 8.5cm 0,clip]{Imagenes/conec_exp4.png}
+    \caption{Conexión Experimento 4}
+    \label{fig:conec_exp4}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \scalebox{1}{
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+         V/div (C. Y1) & V/div (C.Y2) & t/div & Aten. Y1 & Aten. Y2 \\
+    \hline
+         5 $V$ & 5 $V$ &  $ms$ & x10 & x10\\
+    \hline
+    \end{tabular}}
+        %\def\tablename{Tabla} 
+        \caption{Configuración del Osciloscopio}
+        \label{tab:cont4}
+\end{table}
+Como primer paso se midió la tensión de entrada al circuito, obteniendo el siguiente valor.
+
+\begin{equation*}
+    V_i = 230.8 ~[V]
+\end{equation*}
+
+Luego a través del potenciómetro que viene incluido en el circuito de control, se fue variando el ángulo de conducción y a su vez se fue midiendo los valores de tensión que había a la salida del circuito. Se variaron los ángulos de salida según las siguientes gráficas, y se espera obtener formas de onda similares en las mediciones.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \input{Plots/angCon0}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \input{Plots/angCon30}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \input{Plots/angCon60}
+    \end{minipage}
+    \centering
+    \begin{minipage}{0.49\textwidth}
+    \centering
+        \input{Plots/angCon90}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+    \centering
+        \input{Plots/angCon120}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+    \centering
+        \input{Plots/angCon150}
+    \end{minipage}
+\end{figure}
+
+
+\unsubsubsection{Mediciones}
+
+Estas mediciones fueron realizadas con los dos multímetros al mismo tiempo para así ir visualizando la diferencia entre los que media uno y lo que media el otro, obteniendo así la siguiente tabla de comparación.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+        \multirow{2}{*}{Fase} & $V_o$ (1) & $V_o$ (2) & \multirow{2}{*}{$\cfrac{V_{o_1}}{V_i}$} & \multirow{2}{*}{$\cfrac{V_{o_2}}{V_i}$} & Incertidumbre & Incertidumbre&Factor de\\
+         & [V] & [V] &  &  & medición $V_{o_1}$ & medición $V_{o_2}$& corrección $\kappa$\\
+        \hline
+        0° & 0 & 0 & 0 & 0 & $\pm$0 & $\pm$0&0 \\ \hline
+        30° & 43 & 17 & 0.186 & 0.074 & $\pm$0.37 & $\pm$0.51& 2.52 \\ \hline
+        60° & 89 & 47 & 0.386 & 0.204 & $\pm$1.01 & $\pm$0.864&1.89 \\ \hline
+        90° & 116 & 68 & 0.503 & 0.295 & $\pm$1.23 & $\pm$1.12& 1.70\\ \hline
+        120° & 209 & 177 & 0.906 & 0.767 & $\pm$1.97 & $\pm$5.12& 1.18\\ \hline
+        150° & 227 & 215 & 0.984 & 0.931 & $\pm$2.12 & $\pm$5.58& 1.05\\ \hline
+        180° & 231 & 231 & 1 & 1 & $\pm$2.14 & $\pm$5.76& 1\\ \hline
+    \end{tabular}
+    \def\tablename{Tabla} 
+    \caption{mediciones obtenidas}
+    \label{tab:exp4}
+\end{table}
+
+A continuación en la figura \ref{fig:fot_exp4} se muestran las imágenes las formas de ondas visualizadas en el osciloscopio. Para poder observar dichas ondas completas en la pantalla fue necesario utilizar vernier de ganancia al máximo para atenuar las señales a un 30\% de su valor original.
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{subfigure}[b]{0.5\textwidth}
+        \centering  
+            \includegraphics[width=0.65\textwidth]{Imagenes/0grad.jpeg}
+        \label{}
+        \caption{$Ang_{cond}=0$°}
+    \end{subfigure}
+    \hfill
+        \begin{subfigure}[b]{0.49\textwidth}
+        \centering  
+            \includegraphics[width=0.65\textwidth]{Imagenes/30grad.jpeg}
+        \label{}
+        \caption{$Ang_{cond}=30$°}
+    \end{subfigure}
+    \hfill
+        \begin{subfigure}[b]{0.5\textwidth}
+        \centering  
+            \includegraphics[width=0.65\textwidth]{Imagenes/60grad.jpeg}
+        \label{}
+        \caption{$Ang_{cond}=60$°}
+    \end{subfigure}
+    \hfill
+        \begin{subfigure}[b]{0.49\textwidth}
+        \centering  
+            \includegraphics[width=0.65\textwidth]{Imagenes/90grad.jpeg}
+        \label{}
+        \caption{$Ang_{cond}=90$°}
+    \end{subfigure}
+    \hfill
+        \begin{subfigure}[b]{0.5\textwidth}
+        \centering  
+            \includegraphics[width=0.65\textwidth]{Imagenes/120grad.jpeg}
+        \label{}
+        \caption{$Ang_{cond}=120$°}
+    \end{subfigure}
+    \hfill
+        \begin{subfigure}[b]{0.49\textwidth}
+        \centering  
+            \includegraphics[width=0.65\textwidth]{Imagenes/150grad.jpeg}
+        \label{}
+        \caption{$Ang_{cond}=150$°}
+    \end{subfigure}
+    \caption{Señales con diferentes ángulos de conducción}
+    \label{fig:fot_exp4}
+    \end{center}
+\end{figure}
+
+
+
+Se pudo observar que el valor medido por el multimetro de respuesta al valor medio se aproxima al medido por el multimetro \textit{TrueRMS} a medida que la señal $V_o$ se aproxima a una señal sinusoidal. 
+
+\unsubsubsection{Gráficos}
+
+\begin{figure}[H]
+    \centering
+    \input{Plots/ViVo1}
+    \input{Plots/ViVo2}
+   % \input{Plots/ViVovs}
+    \label{fig:vivo}
+\end{figure}
+
+\unsubsubsection{Factor de Corrección}
+
+\begin{figure}[H]
+    \centering
+    \input{Plots/ViVovs}
+\end{figure}
+

@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+\begin{axis}[
+    unbounded coords=jump,
+    z filter/.expression={
+        z>20 ? nan : z
+    },
+    view=[{110}{15}]
+\addplot3[surf,]{sqrt((-x/(x^2+y^2))^2+(y/(x^2+y^2))^2)};
+\end{axis}
+\end{tikzpicture}
+\caption*{Superficie en 3d}

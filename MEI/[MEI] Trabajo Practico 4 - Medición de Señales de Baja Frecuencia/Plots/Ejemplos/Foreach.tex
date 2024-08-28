@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+    \draw [thin,mlgb] (-6,-6) grid (6,6);
+    \draw[mlgb,<->] (-6,0)--(6,0) node[anchor= north west] {$x$};
+    \draw[mlgb,<->] (0,-6)--(0,6) node[anchor=south east]{$y$};
+    \clip (-6,-6) rectangle (6,6);
+    \foreach \c in {1,...,6} {
+        \draw [rotate=-90,gray] plot[smooth,samples=100,domain=-6:-0.01](\x,{ln(\c)+ln(sqrt(1+(tan(deg(\x)))^2))});
+        \draw [rotate=-90,gray] plot[smooth,samples=100,domain=0.01:6](\x,{ln(\c)+ln(sqrt(1+(tan(deg(\x)))^2))});
+    }
+   
+    \foreach \c in {1,...,6} {
+        \draw[rotate=-90,gray] plot[smooth,samples=100,domain=-6:-0.01] (\x,{ln(\c)+ln((sqrt(1+(1/(tan(deg(\x))^2)))))});  
+        \draw[rotate=-90,gray] plot[smooth,samples=100,domain=0.01:6] (\x,{ln(\c)+ln((sqrt(1+(1/(tan(deg(\x))^2)))))});
+    }
+\end{tikzpicture}
+\caption{Plano $w$ graficado sobre el plano $z$ siendo $f_{z}$ un función $z^2$}

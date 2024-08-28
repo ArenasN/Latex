@@ -1,0 +1,173 @@
+\subsection{Experimento 1}
+
+Instrumental utilizado:
+
+\begin{itemize}
+    \item Fuente lineal regulada de 0V a 15V.
+    \item Multímetro Digital MMD BRYMEN BM-837 RS.
+    \item Multímetro analógico Univo Elektronik.
+\end{itemize}
+
+
+Para este primer experimento se plantea realizar el circuito presentado a continuación en la figura \ref{fig:circuitoexp1}. 
+
+\begin{figure}[H]
+    \centering
+    \input{Imagenes/CircE/CirExp1}
+    \caption{Circuito experimento 1}
+    \label{fig:circuitoexp1}
+\end{figure}
+
+El experimento consiste en realizar un barrido de tensiones en un rango determinado y analizar las diferencias en las mediciones del instrumento patrón con respecto al instrumento contrastado. El multímetro digital será utilizado como instrumento patrón, mientras que el analógico será el instrumento contrastado. 
+
+Para elegir el instrumento patrón se debe verificar que el error absoluto máximo del mismo se al menos 5 veces menor que el error absoluto máximo del contrastado. Para esto, se debe utilizar el dato de "clase" del multímetro contrastado (analógico) y despejando el error absoluto máximo de la fórmula de clase:
+
+\begin{equation}\label{eq::clase}
+    Clase= \frac{|\Delta V_{MAX}|}{Valor fiduciario}\cdot 100\%
+\end{equation}
+
+\begin{equation}
+    |\Delta V_{MAX}|= \frac{Clase \cdot Valor fiduciario}{100\%}
+\end{equation}
+
+Reemplazando los valores queda:
+
+\begin{equation}
+    |\Delta V_{MAX}|= \frac{2.5\% \cdot 10[V]}{100\%}= 250[mV]
+\end{equation}
+
+Por lo que el instrumento patrón debe tener como máximo un error absoluto de 50 mV (un quinto del valor del instrumento contrastado). 
+
+Se elige un fondo de escala adecuado en el multímetro patrón para realizar las mediciones. En este caso se eligió $40V$ como valor de fondo.
+\clearpage
+Según la hoja de datos, la expresión del error especificada para esa escala es:
+
+\begin{equation}\label{eq::errorPatron}
+    error_{patron} = 0.08\% + 1\; digitos
+\end{equation}
+
+Como la cifra menos significativa mostrada de acuerdo a la resolución del visor, es del orden de los 0.01 V, se debe sumar 10 mV al valor proporcional de cada error. En base a esto se calcula el máximo error absoluto posible en esa escala (40 V):
+
+\begin{equation}
+    error_{patron} = \frac{0.08\% \cdot 40 [V]}{100\%} + 10 [mV] = 42 [mV]
+\end{equation}
+
+De esta forma, se verifica que el multímetro digital es 5 veces más preciso que el analógico mediante el siguiente cálculo:
+
+\begin{equation}
+    \frac{|\Delta V_{MAX}|_{patron}}{error_{patron}} = 5.95
+\end{equation}
+
+
+Se debe seleccionar también un fondo de escala adecuado para el multímetro analógico. El valor elegido fue de 10 voltios, de manera que el barrido de tensiones pueda realizarse en el rango de 0 a 10 voltios. Luego se realiza la calibración del instrumento de medición analógico. Para ello se realizó una medición de 0 voltios y se situó la aguja indicadora correctamente en 0.
+
+A continuación se comienza con el barrido de tensiones, poniendo a la aguja indicadora en cada uno de los valores de tensión correspondientes a su escala, y anotando el valor medido por el instrumento patrón (multímetro digital). Se aplicaron dos pasadas, una hacia arriba y otra hacia abajo y se anota el mayor error absoluto en cada índice entre ambas pasadas, como se puede observar en la Tabla \ref{tab:exp1a}.
+
+
+\begin{table}[H]
+    \centering
+    \scalebox{0.9}{
+    \begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+         $V_L [V]$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+    \hline
+        $V_p [V]$ (pasada hacia arriba) & 0.93 & 1.89 & 2.88 & 3.88 & 4.85 & 5.87 & 6.86 & 7.87 & 8.86 & 9.77  \\
+    \hline
+        $V_p [V]$ (pasada hacia abajo) & 0.94 & 1.88 & 2.86 & 3.87 & 4.85 & 5.86 & 6.86 & 7.86 & 8.86 & 9.79\\
+    \hline
+        $\Delta V [V]$ (mayor valor) & 0.07 & 0.12 & 0.14 & 0.13 & 0.15 & 0.14 & 0.14 & 0.14 & 0.14 & 0.23\\
+         
+    \hline
+        \end{tabular}}
+        \def\tablename{Tabla} 
+        \caption{Mediciones del instrumento patrón y el mayor error absoluto}
+        \label{tab:exp1a}
+\end{table}
+
+\begin{figure}[h!]
+        \centering        
+        \includegraphics[width=0.35\textwidth]{Imagenes/Exp2.jpeg}
+        \caption{Contrastación de un multímetro analógico con uno digital}
+        \label{fig:contrast}
+\end{figure}
+
+\clearpage
+ En base a los datos tabulados se confecciona la gráfica de corrección para representar cómo varia las mediciones con respecto al instrumento patrón. Sera útil para el usuario en caso de que quiera corregir de manera aproximadas el valor de su medición.
+
+%FALTA lo de SUMAR y RESTAR en el grafico
+%???
+
+\begin{table}[H]
+    \centering
+    \scalebox{0.9}{
+    \begin{tabular}{|c||c|c|c|c|}
+    \hline
+         & Instrumento constrastado & Patrón & Fecha & Operador \\
+    \hline
+        & Marca: Univo Elektronik & \makecell{Marca: UNI-T \\ Nro: UTC33C} & 26/03/2024 & Lucas Musso\\
+    \hline
+         &
+        \multicolumn{4}{|c|}{
+            %\includegraphics[width=\linewidth]{Imagenes/Grafica de correccion.png}
+            \input{Plots/TabExp1}
+        } \\
+        
+         
+    \hline
+        \end{tabular}}
+        \def\tablename{Tabla} 
+        \caption{Mediciones del instrumento patrón y el máximo error absoluto}
+        \label{tab:exp1b}
+\end{table}
+
+
+Se puede obtener la clase de exactitud del instrumento analógico a partir del máximo error absoluto medido (0.23 V para el experimento) a partir de la ecuación \ref{eq::clase}
+
+\begin{equation}
+    Clase= \frac{0.23 [V]}{10 [V]} \cdot 100\% = 2.3\%
+\end{equation}
+
+El "valor fiduciario" es también conocido como fondo de escala, y es el máximo valor medible en esa configuración del instrumento.
+
+Por lo tanto, tiene coherencia con la clase especificada en la hoja de datos del instrumento, la cual es 2.5\%
+
+Una vez calculada la clase del multímetro analógico, se procede a analizar cuan precisas son las mediciones del instrumento digital con respecto a las del instrumento de contraste. Para ello se realiza el cálculo de la relación de error::
+
+\begin{equation}
+    Relacion\;error = \frac{\Delta V_{MAX}}{error_{patron}} \ge 5
+\end{equation}
+
+Como ya se dijo antes, la relación de error debe ser mayor a 5 para toda la escala del instrumento patrón. Se puede representar la relación Medición - Error absoluto en una tabla para verificar hasta que esta condición se cumple (Tabla \ref{tab:relacionerror})
+
+\begin{table}[h!]
+    \centering
+    \scalebox{0.99}{
+    \begin{tabular}{|c||c|c|}
+    \hline
+         Medición & Error patrón & Relación error \\ \hline
+        1   &  0.0108  &  21.30 \\ \hline
+        2  &  0.0116  &  19.83 \\ \hline
+        3  &  0.0124  &  18.55 \\ \hline
+        4  &  0.0132  &  17.42 \\ \hline
+        5  &  0.0140  &  16.43 \\ \hline
+        6  &  0.0148  &  15.54 \\ \hline
+        7  &  0.0156  &  14.74 \\ \hline
+        8  &  0.0164  &  14.02 \\ \hline
+        9  &  0.0172  &  13.37 \\ \hline
+        10 &  0.0180  &  12.78 \\ \hline
+        \end{tabular}}
+        \def\tablename{Tabla} 
+        \caption{Relaciones de errores entre instrumento patrón y de contraste}
+        \label{tab:relacionerror}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \input{Plots/RelError}
+    \caption{Relaciones de errores entre instrumento patrón y de contraste}
+    \label{fig:relacionerror}
+\end{figure}
+
+
+
+

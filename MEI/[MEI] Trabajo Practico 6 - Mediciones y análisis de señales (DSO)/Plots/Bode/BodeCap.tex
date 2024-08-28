@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=0.75,every node/.style={transform shape}]
+
+    \def\scalya{0}%Desfase curvas
+    \def\scaly{1/5}%Escala eje y
+    \def\scalx{1.5}%Escala eje x
+    \def\scalxa{3}%Desfase puntos kHz
+    
+   
+    
+    %Ejex
+    \foreach \x [evaluate={\a=int(\x+1)}]in {0,...,4}{
+    \foreach \y in {1,...,10}
+        \draw[line width=1pt,gray!40] ({(\x+log10(\y))*\scalx},0)--({(\x+log10(\y))*\scalx},6);
+    }
+    \draw[|-stealth] (0,0)--(5*\scalx,0) node[right] {$Frec_{(rad/s)}$};
+    
+    %Ejey
+    \foreach \y [evaluate={\a=int(\y/(\scaly))}] in {1,...,6}{
+        \draw[line width=1pt,gray!40] (0,\y)--(5*\scalx,\y);
+    }
+   \draw[|-stealth] (0,0)--(0,6) node[left]{$G_{dB}$};
+   \draw[line width=1pt,black](0,3)node[left]{$\frac{L}{r_l}$}--(2*\scalx,3)--(5*\scalx,0) (3,0)node[below]{$\frac{r_l}{L}$};
+  
+
+\end{tikzpicture}

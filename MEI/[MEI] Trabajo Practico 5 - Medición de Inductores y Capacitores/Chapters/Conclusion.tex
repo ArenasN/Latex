@@ -1,0 +1,36 @@
+\begin{itemize}
+
+  \item En la sección~\ref{sec:exp1}, al evaluar el valor final de la inductancia $L$ se decidió tomar la media de los tres resultados en distintas frecuencias en ves de usar la mediana. La razón por la cual se debería tomar la mediana es porque el valor de la mediana es menos sensible a los valores atípicos debido a que solo considera la posición de los datos y no su magnitud. Por lo tanto, un valor extremadamente alto o bajo no afecta significativamente a la mediana.
+
+En distribuciones sesgadas, donde  los datos no se distribuyen de manera simétrica alrededor de la media, la media aritmética puede estar influenciada por los valores extremos, lo que puede dar una representación engañosa de la tendencia central. Es por esto que la mediana, proporciona una mejor representación en estos casos.
+
+\item Siguiendo con la misma experiencia, con respecto a la "ecuación 1" presentada en las consignas del presente trabajo (ecuación \ref{eq:ecuacion1} en la referencia), en este mismo experimento se aclaró que la bobina previamente no fue excitada, de haberlo estado, la función de transferencia mostrada en la ecuación \ref{eq:finepx3} se vería afectada generando un termino extra en el régimen transitorio del circuito, distorsionando las mediciones. De todas maneras, el efecto debería apaciguarse a medida que se estabiliza el circuito.
+
+\begin{equation}
+    L = \frac{e_{pp}}{4\cdot I \cdot f}
+    \label{eq:ecuacion1}
+\end{equation}
+
+\item Por otra parte, en las consignas se aclara que el circuito RL, actuará como un derivador, y por ello, cualquier impulso externo que se encuentre presente, será naturalmente incrementado, produciendo distorsiones en la señal sobre la bobina. Otra de las razones por la cuales se pueden producir deformaciones en la señal son el ruido térmico, generado por la resistencia serie equivalente. 
+\begin{equation}
+    V_n = \sqrt{4k_BTR\Delta f}
+\end{equation}
+También se debe tener en cuenta el efecto de la capacitancia parásita presente en un inductor,  la cual puede acoplar ruido de alta frecuencia al circuito, afectando la calidad de la señal y la estabilidad del sistema.
+
+Otro factor a tener en cuenta, es el efecto amplificador que puede tener el elemento a distintas frecuencias. Si la señal de extinción esta compuesta por distintas armónicas puede llevar a distorsiones por el distinto comportamiento a distintas frecuencias del propio elemento.
+
+
+
+\item Con respecto a la experiencia de la sección \ref{sec:exp2} La RSE (resistencia serie equivalente) de un capacitor se utiliza para realizar una representación más precisa del comportamiento de un capacitor real. Se representa en serie junto con un capacitor ideal, y su valor es relativamente pequeño. Conocer el valor de la RSE es crucial en aplicaciones de alta frecuencia, en donde pequeñas fluctuaciones resistivas pueden producir cambios significativos en el comportamiento del circuito. Se conoce por electrónica aplicada que la reactancia capacitiva $X_c$ disminuye a medida que se aumenta la frecuencia. Si el valor de $X_c$ se hace comparable al valor de la $RSE$, entonces la caída de tensión producida por RSE será comparable a la del capacitor lo que implica mayor disipación de potencia, lo que puede llevar a sobre-calentamiento del componente en frecuencia altas.
+
+\item Un límite práctico para las mediciones realizadas en la sección \ref{sec:exp1} y \ref{sec:exp2} es que se debe tener que las resistencias series equivalentes del inductor y capacitor no deben ser de valor muy elevado, pues de ser así, la resistencia en serie que se tendría que poner a la salida del generador para fijar la forma de onda de la corriente debería ser mucho mayor aún, lo cual atenuaría la señal del inductor (la derivada de la corriente será menor). Una forma de contrarrestar este efecto sería elevando la tensión de salida del generador, sin embargo, algunos modelos de generadores únicamente trabajan en  el rango de pequeña y mediana señal.
+
+Por otro lado, se debe tener en cuenta que el valor de $L$ produzca una impedancia significativa a las frecuencias medias de trabajo, puesto que si la frecuencia a la cual se pueden ver sus efectos es muy alta, el efecto de las capacitancias parásitas tendrá que tenerse en cuenta.
+
+Por último, como se explicó anteriormente, los valores de ruido también producen deformaciones en la forma de onda. Si estos efectos son muy notables, no se podría proceder con el método utilizado.
+
+\item En cuanto al título del trabajo ''Mediciones de la impedancia de inductores y
+capacitores'', se debe acotar que en realidad no se ha determinado la impedancia de ningún elemento, puesto que esta depende de la frecuencia a la cual se expone el circuito donde se conecte. Una descripción más acorde a lo realizado sería decir que se realizaron las mediciones de las magnitudes fundamentales que luego serán utilizadas para establecer la impedancia de los elementos en una frecuencia determinada.
+
+%\item Con lo que respecta a la generalidad del trabajo, 
+\end{itemize}

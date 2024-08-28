@@ -1,0 +1,23 @@
+\begin{tikzpicture}[scale=0.8, shorten >=1pt,auto,node distance=5.5cm,thick,main node/.style={circle split,draw,font=\sffamily\Large\bfseries}, every node/.style={transform shape}]
+
+%Colocacion de nodos coordenadas relatvas
+  \node[main node] (1) {$ST1$  \nodepart{lower} $00$};
+  \node[main node] (2) [ right of=1] {$ST2$
+                        \nodepart{lower} $00$};
+  \node[main node] (3) [below right of=2] {$ST4$                                                            \nodepart{lower}$01$};
+  \node[main node] (4) [above right of=2] {$ST3$
+                        \nodepart{lower}$10$};
+
+%Links entre nodos en un solo path
+  \path[every node/.style={font=\sffamily\small}];
+    \draw[-latex]
+    (1) edge  node {$PC \& FC=0$} (2)
+        edge [loop left] node {$PC \& FC=1$} (1)
+    (2) edge  node {${\Tilde{PC_{+1}}} \& FC=0$} (3)
+        edge  node {${\Tilde{PC_{+1}}} \& FC=1$}  (4)
+    (3) edge [bend left] node[right] {$PC \& FC=1$} (1)
+        edge [loop right] node {$PC \& FC=0$} (3)
+    (4) edge [bend right] node[right] {$PC \& FC=1$} (1)
+        edge [loop right] node {$PC \& FC=0$} (4);
+\end{tikzpicture}
+\caption*{Diagrama de estados}

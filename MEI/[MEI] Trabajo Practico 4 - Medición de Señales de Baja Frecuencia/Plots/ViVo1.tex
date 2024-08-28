@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale=1]
+        \coordinate (a1) at (0,0);
+        \coordinate (a2) at (2,0.186*4);
+        \coordinate (a3) at (4,0.386*4);
+        \coordinate (a4) at (6,0.503*4);
+        \coordinate (a5) at (8,0.906*4);
+        \coordinate (a6) at (10,0.984*4);
+        \coordinate (a7) at (12,1*4);
+
+    \draw[thin,gray!40] (0,0) grid (12,4);
+    \draw[<->] (0,0)--(12,0) node[right] {$[^\circ]$};
+    \draw[<->] (0,0)--(0,4) node[above]{$\frac{V_o}{V_i}$};
+
+
+    \foreach \a [evaluate={\y=int(\a*15)}] in {0,2,...,12}{
+        \draw[line width=0.7pt,dotted] (\a,0) node[below]{\footnotesize $\y^\circ$};
+    }
+    \foreach \a [evaluate={\y=(\a*0.25)}] in {0,1,...,4}{
+        \draw[line width=0.7pt,dotted] (0,\a) node[left]{\footnotesize $\y$};
+    }
+    \foreach \a in{1,...,7}{
+       \draw[thin,dashed,black] let \p1=(a\a) in (\x1,0)--(a\a);
+       \draw[line width=1pt,black](a\a) circle(1pt);
+    }
+    \foreach \x [evaluate={\y=int(\x+1);}] in {1,...,6}{
+        \draw[line width=1pt,black] (a\x) -- (a\y);
+   }
+    
+\end{tikzpicture}
+\caption*{$V_o$ medido por el multimetro \textit{TrueRMS}}

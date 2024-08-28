@@ -1,0 +1,6 @@
+\begin{circuitikz} [scale=1,american, transform shape]
+\def\scal{1};
+\draw (0,-2) to[V,invert] (0,2) to[rmeterwa, t=I, i=$I_{Rp}$] (2,2) to[R, l=$R_{cable}$] (6,2)--(8,2) to[R, l=$R_{prueba}$] (8,-2)--(6,-2) to[R, l=$R_{cable}$] (2,-2)--(0,-2);
+
+\draw (6,2) to[rmeterwa, t=V, v=$V_{Rp}$, o-o] (6,-2);
+\end{circuitikz}

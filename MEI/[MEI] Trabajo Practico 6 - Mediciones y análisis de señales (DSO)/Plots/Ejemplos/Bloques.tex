@@ -1,0 +1,26 @@
+\begin {circuitikz}[scale=1,every node/.style={transform shape}]
+\draw
+% Amplificador Operacional
+	(5,2.5) node[op amp] (opamp) {}
+% Entrada v_A
+	(-1,0) node[ground]{} to[V=$v_A$] ++(0,4)
+	to[short] ++(1.5,0) to[R=$R_A$] ++(2.5,0) -| ++(0,-1) 
+% Entrada v_B
+	(1,0) node[ground]{} to[V=$v_B$] ++(0,2)
+	to[short] ++(0,0) to[R=$R_B$] ++(2,0) -| ++(0,1) node[circ]{}
+	--(opamp.-)
+% Entrada No Inversora
+	(opamp.+) -| ++(0,-2) node[ground]{}
+% Realimentación
+	(opamp.-) node[circ]{} -- ++(0,1) to[R=$R_f$] ++(2.5,0) |- node[circ]{} (opamp.out) {}
+% Etapa de Salida
+	 -- ++(1,0) % Línea desde la salida del Amplificador Operacional
+	node[ocirc](A){}
+	to[R=$R_L$] ++(0,-2.5)
+	node[ground]{} node[ocirc](B){} 
+	(A) to[open, v=$v_o$] (B)
+% Etiqueta
+	(7.5,2.5) node [right]{$\displaystyle V_0=-\bigg(\frac {R_f}{R_A}\bigg) v_A-\bigg(\frac {R_f}{ R_B}\bigg) v_B$}
+;
+\end{circuitikz}
+\caption*{Algo\idk}

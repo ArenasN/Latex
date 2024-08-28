@@ -1,0 +1,8 @@
+\begin{circuitikz} [scale=1,american, transform shape]
+\def\scal{1};
+\draw (0,-2) to[I] (0,2)  (4.5,2) edge[dashed] (7.5,2) (0,2) to[short,-o] (4.5,2) ;
+\draw (7.5,2) to[short,o-] (8,2)to[R, l=$R_{probe}$] (8,-2) (7.5,-2) edge[dashed](4.5,-2) (4,-2) to[short,-o](4.5,-2) (8,-2) to[short,-o](7.5,-2);
+\draw (4,2) to[rmeterwa, t=V, v=$v$, o-o] (4,-2);
+\draw (4,-2) to[rmeterwa, t=I, i=$i$, o-] (0,-2);
+
+\end{circuitikz}

@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=1]
+
+    %Generacion de 32 lineas que pasan por el centro
+    \foreach \ang in {0,...,31} {
+        \draw [gray!40] (0,0) -- (\ang * 180 / 16:4);
+    }
+    %Generacion de circulos cocentricos
+    \foreach \s in {0,0.5,...,3.5} {
+        \draw [gray!40] (0,0) circle (\s);
+    }
+   
+
+    %   2 zonas remarcadas
+    \path[fill=mlgb, fill opacity=0.6] (0,0)--(4,0) arc(0:90:4) --(0,0);
+    \path[fill=vorange, fill opacity=0.6] (0,0)--(4,0) arc(360:270:4)--(0,0);
+    
+    % 2 Arcos de ejemplo 
+    \draw[line width=0.75pt,mdrd,|-|] (0.866*3,0.5*3) arc (30:150:3);
+    \draw[line width=0.75pt,mdblu,|-|] (0.9962,-0.087156) arc (-5:-85:1);
+
+     %Ejes y deliniado    
+    \draw[<->] (-4,0)--(4,0) node[right] {$x$};
+    \draw[<->] (0,-4)--(0,4) node[above]{$y$};
+    \draw [black,line width=0.5pt] circle (4);
+\end{tikzpicture}

@@ -1,0 +1,126 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\input{Formato/Lib}
+\makeatletter
+\input{Formato/comands}
+
+
+%Configuracion de hoja (margenes y tamaño)
+\geometry{a4paper,margin=1in}
+\setlength\headheight{28pt}
+
+
+
+
+
+%Metadata para pdf
+%\hypersetup{
+%    pdftitle={\@title},
+%    pdfsubject={\@catedra\ - \@subtitledoc},
+%    pdfauthor={\@author\ - \@legajo\ - \@curso},
+%    pdfkeywords={\@title\ \@catedra\ \@subtitledoc\ \@author\ \@legajo\ \@curso}
+%}
+
+
+
+
+
+
+%formato de encabezado y pie para todas las paginas.
+
+%ENCAtext
+\fancyhead[L]{
+%COLUMNA2
+   \adjustbox{max width=9mm}{
+   \input{Imagenes/Logo-UTNa}
+   }
+    \begin{minipage}[b]{105mm}
+        \textbf{Alumnos: }\@footerauthor \\
+        \textbf{Legajos: }\@footerlegajo
+    \end{minipage}
+}
+%COLUMNA2
+\fancyhead[R]{
+        \textbf{Curso:} \@curso \textbf{-Año:} \@date \\ %\the\year/\twodigits\the\month/\twodigits\the\day\\
+        \textbf{Cátedra:} \@footercatedra
+}
+
+%FINPtext
+\fancyfoot[C]{} %eliminar antiguo numero de pagina
+\fancyfoot[R]{Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\pagestyle{fancy}
+\addto\captionsspanish{%
+	\renewcommand{\contentsname}%
+	{CONTENIDO}%
+}
+
+\renewcommand{\maketitle}{%
+    \newpage
+    \thispagestyle{empty}
+    
+    \begin{center}
+
+    \textsc{\LARGE \@instituto}\\[0.5cm] 
+    \textsc{\Large \@carrera}\\[1.5cm] 
+    \input{Imagenes/Logo-UTNa}\par
+    \vspace{0.9cm}
+    
+    \textsc{\large \@catedra}\\[0.85cm]
+    \headrule \vspace{0.25cm}
+    {\huge\bfseries \@title}\\[0.4cm]
+    \textsc{\Large \@subtitledoc}\\[0.25cm]
+    \headrule \vspace{0.25cm}
+    
+    \end{center}
+
+    \vspace{2cm}
+
+    {\noindent
+    \begin{minipage}[t]{.2\textwidth}
+        \raggedright
+        \textbf{DOCENTES} \par
+        \bigskip
+        \smallskip
+        \textbf{CÁTEDRA} \par
+        \textbf{CURSO} \par
+        \medskip
+        \textbf{ALUMNOS} \par
+        \end{minipage}%
+        \begin{minipage}[t]{.05\textwidth}
+        \raggedright
+        \textbf{:} \par
+        \bigskip
+        \smallskip
+        \textbf{:} \par
+        \textbf{:} \par
+        \medskip
+        \textbf{:} \par
+    \end{minipage}%
+    \begin{minipage}[t]{.55\textwidth}
+        \raggedright
+        \@professor \par
+        \@catedra \par
+        \@curso \par
+        \medskip
+        \@author \par
+    \end{minipage}%
+    \begin{minipage}[t]{.15\textwidth}
+        \raggedright
+        ~\\
+        ~\\
+        ~\\
+        ~\\
+        \medskip
+        \@legajo \par
+    \end{minipage}
+    }
+    \vfill
+    \begin{center}
+        \textbf{CÓRDOBA, ARGENTINA} \par
+        \textbf{\@date}
+    \end{center}
+    \newpage
+}
+
+\makeatother

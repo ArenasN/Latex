@@ -1,0 +1,15 @@
+\begin{tikzpicture}[scale=2]
+    %Grilla y zonas remarcadas
+    \draw[thin,gray!40] (-2,-2) grid (2,2);
+    \fill[draw=gray!40, fill=mlgb, fill opacity=0.6] (1,-2) -- (1,2) -- (0,2) -- (0,-2);
+    \fill[draw=gray!40, fill=vorange, fill opacity=0.6] (1,-2) -- (1,2) -- (2,2) -- (2,-2);
+
+    %Ejes
+    \draw[<->] (-2,0)--(2,0) node[right] {$x$};
+    \draw[<->] (0,-2)--(0,2) node[above]{$y$};
+
+    %Figuras de ejemplo
+    \draw[fill=black] (1,0) circle(2pt) node[anchor=south east]{$\kappa$};
+    \draw[line width=2pt,black,stealth-stealth] (1,-2)--(1,2) node[anchor=south west]{$(\kappa,jt)$};
+\end{tikzpicture}
+\caption*{Grilla y formato estándar}

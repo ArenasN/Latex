@@ -1,0 +1,5 @@
+\begin{circuitikz}[scale=1,every node/.style={transform shape},style=american]
+\draw (0,2)to[open,v=$v_i$,o-o](0,-2)--(3,-2)to[capacitor=$C$](3,0)to[R=$r_c$](3,2) (0,2)to[R=$R_g$,i=$i_{(t)}$](3,2);
+\draw[line width=0.7pt,dashed] (2.3,-1.8)rectangle(3.3,1.8);
+\draw (3.7,0)to[open,v=$v_c$](3.7,-2)  (3.7,2)to[open,v=$v_r$](3.7,0);
+\end{circuitikz}

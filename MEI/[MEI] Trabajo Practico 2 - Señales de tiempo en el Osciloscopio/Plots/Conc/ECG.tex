@@ -1,0 +1,23 @@
+\begin{tikzpicture}[scale=0.5]
+\def\scalT{0.01};
+\def\scalV{1};
+\def\offset{2};
+\foreach \x in {-5,-4.8,...,4.8,5}{
+    \draw[gray!40,thin,shift={(\x,0)}] (0pt,2pt) -- (0pt,-2pt);
+}
+\foreach \y in {-4,-3.8,...,3.8,4}{
+    \draw[gray!40,thin,shift={(0,\y)}] (2pt,0pt) -- (-2pt,0pt);
+}
+\foreach \a [evaluate={\y=\a*2.5}] in {-1,1}{
+    \draw[gray!40,thin,dotted] (-5,\y) -- (5,\y);
+}
+
+\draw[thin,gray!40] (-5,-4) grid (5,4);
+\node[fill=white,text=gray!40,circle,scale=0.3] at (-5,2.5) {$100$};
+\node[fill=white,text=gray!40,circle,scale=0.3] at (-5,2) {$50$};
+\node[fill=white,text=gray!40,circle,scale=0.3] at (-5,-2) {$10$};
+\node[fill=white,text=gray!40,circle,scale=0.3] at (-5,-2.5) {$0\%$};
+
+\draw[black] (-6,-5) rectangle(6,5);
+\draw [mblk]plot[smooth,samples=100,domain=-5:5](\x,{\scalV*(1.5*cos(deg(\x*500*\scalT))+\offset)});
+\end{tikzpicture}

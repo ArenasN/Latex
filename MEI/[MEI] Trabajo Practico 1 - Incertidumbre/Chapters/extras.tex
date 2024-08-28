@@ -1,0 +1,72 @@
+
+\begin{figure}[h!]
+        \centering        \includegraphics[width=0.6\textwidth]{Imagenes/480px-Medición_a_cuatro_puntas.png}
+        \caption{Circuito para medición de cuatro puntos de una Resistencia}
+        \label{fig:ej4puntas}
+\end{figure}
+
+Como los voltímetros poseen una resistencia interna muy grande (usualmente, del orden de los 10 M$\Omega$), prácticamente no circula corriente por el circuito interno. Además, la resistencia de los cables uniendo los circuitos es baja, por lo que la caída de tensión sobre estos es despreciable. Entonces, se tiene una medición:
+
+\begin{equation}
+    %V^{+}=\epsilon_{A}
+    V^{+}=\varepsilon_{A}+I^{+}R-\varepsilon_{B}
+\end{equation}
+
+Donde $\varepsilon _{A}$ y 
+$\varepsilon _{B}$ representan los potenciales de contacto, y el superíndice (+) indica la polaridad de la fuente en esta primera medición de corriente y tensión. Si invertimos la polaridad de la fuente, identificando la corriente y tensión medidas en este caso con superíndice (–), medimos entonces
+
+\begin{equation}
+    V^{-}=-\varepsilon_{A}+I^{-}R+\varepsilon_{B}
+\end{equation}
+
+Donde $V^{-}$ es el módulo de la tensión medida por el voltímetro, ya que este se encuentra conectado para medir tensiones positivas cuando la fuente se polariza en el sentido de la primera medición. Sumando las dos expresiones, se obtiene
+
+\begin{equation}
+    V^{+}+V^{-}=(I^{-}+I^{+})R
+\end{equation}
+
+De esta expresión es posible despejar una expresión del valor de la resistencia deseada únicamente en términos de los valores de corriente y tensión medidos al polarizar la fuente en sentidos contrarios:
+
+\begin{equation}
+    R={\frac {V^{+}+V^{-}}{I^{-}+I^{+}}}
+\end{equation}
+
+De esta manera, el método de medición a cuatro puntas permite medir resistencias pequeñas, ya que elimina la contribución de la resistencias de cableado en la medición y de los potenciales de contacto. Además, es conveniente utilizar una fuente que regule la corriente de alimentación del circuito, manteniendo una dada tensión entre sus extremos, y fijando un límite para la corriente alimentada Esto permitirá limitar la potencia disipada por el circuito a los límites permitidos por los instrumentos y elementos mediante la corriente máxima de alimentación y $R_{ext}$, y al mismo tiempo trabajar con una tensión constante sobre el circuito.
+
+
+
+
+
+
+
+
+
+TElurimetro
+
+La finalidad principal de una puesta a tierra es limitar la tensión con respecto a tierra que puedan presentar, en un momento dado, los objetos metálicas, asegurar la actuación de las protecciones y eliminar o disminuir el riesgo que supone una avería en los materiales eléctricos utilizados.
+
+
+
+
+
+
+
+\begin{table}[H]
+    \centering
+    \scalebox{0.9}{
+    \begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+         $V_L [V]$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+    \hline
+        $V_p [V]$ (pasada hacia arriba) & 0.92 & 1.92 & 2.93 & 3.93 & 4.96 & 6.00 & 7.04 & 8.07 & 9.11 & 10.12  \\
+    \hline
+        $V_p [V]$ (pasada hacia abajo) & 0.90 & 1.90 & 2.91 & 3.93 & 4.97 & 6.01 & 7.04 & 8.07 & 9.10 &  10.11\\
+    \hline
+        $\Delta V [V]$ (mayor valor) & 0.10 & 0.10 & 0.09 & 0.07 & 0.04 & 0.01 & 0.04 & 0.07 & 0.11 & 0.12\\
+         
+    \hline
+        \end{tabular}}
+        \def\tablename{Tabla} 
+        \caption{Mediciones del instrumento patrón y el mayor error absoluto}
+        \label{tab:exp1a}
+\end{table}

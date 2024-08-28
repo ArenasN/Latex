@@ -1,0 +1,7 @@
+\begin{circuitikz} [scale=1,american, transform shape]
+\def\scal{1};
+\draw (0,-2) to[V,invert] (0,2)--(2,2) to[switch] (6,2) to[rmeterwa, t=V, v=\footnotesize{$Patron$},o-o] (6,-2)--(0,-2);
+\draw (3,2)
+    to[vR,o-o] (3,-2);
+\draw (6,2)to[short,o-](8,2) to[smeter, t=V, v^=\footnotesize{$Contrastado$}] (8,-2)to[short,-o](6,-2);
+\end{circuitikz}

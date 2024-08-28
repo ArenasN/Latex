@@ -1,0 +1,69 @@
+\subsection{Inductancias}\label{sec:Ind}
+Los inductores o inductancias son elementos almacenadores de energía en forma de campos magnéticos. Idealmente son descriptos por la siguiente ecuación:
+\begin{equation}
+    v_{i(t)}=L\cdot\frac{d~i}{dt}\llrah{\mathcal{L}} V_{(\mathscr{s})}=I_{(\mathscr{s})}[\mathscr{s}L-il_{0}]
+\end{equation}
+Esta ecuación implica que el inductor es no pose elementos resistivos. 
+El componente real es más precisamente descripto por el siguiente circuito equivalente:
+\begin{figure}[H]
+    \centering
+    \input{Plots/Induc/Circu}
+    \caption{Circuito equivalente a un inductor real}
+    \label{fig:CircInd}
+\end{figure}
+
+En esta representación se pude apreciar que los elementos físicos que componen los bobinas e inductores aportan un componente resistivo al circuito. Entonces la ecuación que descrié mas precisamente el comportamiento de este componente es:
+\begin{equation}
+    v_{i(t)}=r_l\cdot i_{(t)}+L\cdot\frac{d~i_{(t)}}{dt}\llrah{\mathcal{L}} V_{(\mathscr{s})}=I_{(\mathscr{s})}[r_l+\mathscr{s}L-il_{0}]
+    \label{eq:InducGn}
+\end{equation}
+La tensión a bordes del inductor, teniendo en cuenta una señal de corriente sera entonces, la señal escalada por un factor $r_l$ sumada a la misma señal derivada y escalada por $L$. 
+
+\subsection{Capacitancia}\label{sec:Cap}
+Una capacitancia es un elemento almacenador de energía en forma de potencial eléctrico. El capacitor es modelizado idealmente por la siguiente ecuación.
+\begin{equation}
+    i_{(t)}=C\frac{d~v_{(t)}}{dt}\llrah{}v_{(t)}=\frac{1}{C}\int i_{(t)}~dt
+\end{equation}
+Claro que el componente real pose un componente resistivo intrínseco debido a las características constructivas del mismo.
+\begin{figure}[H]
+    \centering
+    \input{Plots/Capa/Circu}
+    \caption{Circuito equivalente a un capacitor}
+    \label{fig:CircCap}
+\end{figure}
+Por lo tanto la ecuación correspondiente a este modelo de un capacitor seria la siguiente:
+
+\begin{equation}
+    v_{(t)}=r_c\cdot i_{(t)} + \frac{1}{C}\int i_{(t)}~dt\llrah{}V_\mathscr{s}=I_\mathscr{s}\cdot[r_c+\frac{1}{C\mathscr{s}}]
+\end{equation}
+Podemos observar que la tensión medida sobre los bornes del capacitor va a ser la suma entre la integral de la corriente mas la misma corriente multiplicada por algún factor.
+
+\subsection{Resonancia en RLC}
+
+Si se alimenta un circuito serie RLC con una fuente de frecuencia $\omega$
+variable, los valores de las reactancias inductivas y capacitivas varían en
+función de la frecuencia. Es decir, la impedancia $Z(j\omega)$ compuesta por
+
+\begin{equation}
+    Z(j\omega) = R + j\omega L - j \frac{1}{\omega C} = R + j(\omega L - \frac{1}{\omega C})
+    \label{eq:impedanciaRLC}
+\end{equation}
+
+se modifica mientras varía la frecuencia de excitación. Observando la parte reactiva se aprecia que para algún valor de $\omega=\omega_0$ los módulos de las reactancias serán iguales, provocando que se anule la parte reactiva de la ecuación \ref{eq:impedanciaRLC}:
+
+\begin{equation}
+    \omega_0 L = \frac{1}{\omega_0 C}
+    \label{eq:react0}
+\end{equation}
+
+Despejando $\omega_0$ de la igualdad \label{eq:react0} se obtiene
+
+\begin{equation}
+    \omega_0 = \frac{1}{\sqrt{LC}} \lrah f_0 = \frac{1}{2\pi\sqrt{LC}}
+\end{equation}
+
+Como L y C son siempre positivos, se sigue que
+siempre existe una frecuencia real que satisfaga la ecuación \ref{eq:react0}, es decir que anule la parte reactiva de un circuito RLC serie. La frecuencia $\omega_0$ que produce la anulación de la parte reactiva de un circuito se la llama \textit{frecuencia de resonancia}.
+
+
+

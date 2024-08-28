@@ -1,0 +1,18 @@
+Con el presente trabajo se pudo aprender a como medir las impedancias y el ancho de banda de los amplificadores correctamente, parámetros muy importante para nuestra carrera. Además de medir lo efectos que tiene sobre estos parámetros la realimentación negativa.
+Se pudo observar que, la realimentación negativa, aumenta el ancho de banda del amplificador a costa de reducir la ganancia. La realimentación negativa, además de tener un efecto sobre la respuesta en frecuencia, afecta las impedancias tanto de entrada como de salida. La impedancia de entrada aumentara, incrementando la ganancia en potencia del amplificador. Recordando la ecuación \ref{eq:Exp4PotZ},$P_{dB}=GV_{dB}-10\log{\frac{Z_L}{Z_e}}$ el efecto del segundo termino (correspondiente a las impedancias) tendrá un mayor efecto, aumentando la ganancia. Claro esto solo si tenemos en cuenta el efecto que tienen las resistencias y despreciando la perdida de ganancia en tensión. En cuanto a la transferencia de potencia, la disminución de la impedancia de salida no involucra una mayor potencia sobre la carga. Ahora, en el caso de la impedancia de entrada es de esperar que aumente la resistencia al ser una realimentación del tipo comparación de tensiones en serie.
+
+Se aprendió a utilizar la escala de decibelios en el multimetro y como calibrarlo.
+El usar un multimetro con escala en decibelios te da muchas ventajas que simplifican la experimentación, algunas de estas son:
+\begin{itemize}
+    \item Facilidad en el calculo, ya que la ganancia se obtiene realizando directamente la diferencia entre los valores de entrada y de salida, permitiendo observar fácilmente si nuestro amplificador magnifica, atenúa o no amplifica la señal de entrada.
+    \item Permite visualizar de manera cómoda la variación de la ganancia en función de factores que poseen un amplio rango de variación.
+    \item Al medir algún parámetro (potencia o tensión), el uso de escalas en decibeles permite visualizar de manera rápida y directa la magnitud medida. 
+    \item El decibel se calcula en una escala logarítmica que permite la especificación del rendimiento a través de un amplio rango de voltaje/potencia.
+\end{itemize}
+
+En caso de que se cambie la escala,(respecto a el rango de $3V$)de un multimetro analógico al medir en decibelios, se debe aplicar un factor de corrección para las mediciones:
+\begin{equation}
+    dBu=dBu'+\log{\frac{Vr_1}{Vr_0}}
+\end{equation}
+Siendo $dBu'$ el valor medido por el multimetro, $Vr_0$ el valor de la escala inicial (en nuestro caso $3V$) y $Vr_1$ el valor de la nueva escala.
+

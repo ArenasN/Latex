@@ -1,0 +1,136 @@
+Esta parte del trabajo practico, tiene como objetivo graficar y determinar la respuesta en frecuencia del amplificador, además de medir su ancho de banda. Los puntos de mayor interés serán las curvas de subida y bajada de ganancia que, generalmente, son marcadas por un cambio de tendencia cuando la respuesta del amplificador es de $-3\mathrm{dB}$ en comparación de su ganancia máxima en máxima excursión simétrica. Las frecuencias que generan una respuesta de $-3\mathrm{dB}$ se nombran como frecuencias de corte. La diferencia entre las frecuencias de corte da como resultado el ancho de banda del amplificador.
+
+Teniendo en cuenta esto se ajusto la señal de entrada al amplificador, tanto a lazo abierto como a lazo cerrado, para obtener la señal de salida en máxima excursión simétrica. Luego matemáticamente se obtuvieron los valores de tensión esperados en la salida para las frecuencias de corte.
+
+Se determino que en nivel de tensión ($V_{pp}$) de la señal de salida a lazo abierto sin saturación es de $V_{ppS}=7V$.Esta señal de salida le corresponde a una señal de entrada de $V_{ppE}=170mV$.
+Teniendo en cuenta la ecuación para determinar la ganancia en $dB$ de tensión \ref{eq:dBaveces}, se calculo el nivel esperado de tensión ($V_{out}$) para las frecuencias de corte a lazo abierto:
+\begin{equation}
+    V_{out}=7V\cdot10^{\frac{-3}{20}}\lrah V_{out}=4,95V
+\end{equation}
+
+Se realizo el barrido de frecuencia y se determinaron las frecuencias de corte.
+\begin{table}[H]
+\parbox{.45\textwidth}{  
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $f$ [Hz] &  $V_{pp}$&$GR_{dB}$\\
+        \hline
+         $750$&$6,92$&$-0.10$\\ 
+         $500$&$6,76$&$-0.30$\\ 
+         $250$&$6,52$&$-0.62$\\ 
+         $150$&$6,28$&$-0.94$\\ 
+         $100$&$6,00$&$-1.34$\\ 
+         $75$&$5,56$&$-2.00$\\
+         $65$&$5,32$&$-2.38$\\
+         $54$&$4,96$&$-2.99$\\
+         \hline
+    \end{tabular}
+    \caption{Barrido descendente}
+    \label{tab:RF-LAAinf}
+    }
+    \parbox{.45\textwidth}{
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $f$ [kHz] &  $V_{pp}$&$GR_{dB}$\\
+        \hline
+         $10$&$7,00$&$-0.00$\\ 
+         $30$&$6,90$&$-0.12$\\ 
+         $50$&$6,28$&$-0.94$\\ 
+         $60$&$5,88$&$-1.51$\\ 
+         $70$&$5,56$&$-2.00$\\
+         $75$&$5,36$&$-2.32$\\
+         $78$&$5,28$&$-2.45$\\
+         $80$&$5,24$&$-2.51$\\
+         $85$&$5,00$&$-2.92$\\
+         $87$&$4,96$&$-2.99$\\
+         \hline
+    \end{tabular}
+    \caption{Barrido ascendente}
+    \label{tab:RF-LAAsup}
+    }
+\end{table}
+Como se observa en las tablas \ref{tab:RF-LAAinf} y \ref{tab:RF-LAAsup}, la frecuencia de corte correspondiente a la curva de subida de ganancia es de $F_{CAinf}=54_{Hz}$ y la frecuencia de corte correspondiente a la curva de bajada de ganancia es de $F_{CAsup}=87_{kHz}$. Dando como resultado un ancho de banda de:
+\begin{equation*}
+    AB_{LA} = F_{CAsup}-F_{CAinf}\lrah AB_{LA}=86.946 kHz
+\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \input{Plots/Exp7/RFA}
+    \caption{Respuesta en frecuencia de ganancia relativa a lazo abierto}
+    \label{fig:RFA}
+\end{figure}
+Se repitió el mismo procedimiento para el caso de la configuración a lazo cerrado. Se observo que el valor máximo de tensión pico-pico a la salida en la configuración de lazo cerrado, que no genere distorsión, es de  $V_{ppS}=7.48$, correspondiente a una señal de tensión pico-pico a la entrada de $V_{ppE}=3.2$. Utilizando la ecuación \ref{eq:dBaveces} se obtuvo el nivel de tensión esperado a la salida para las frecuencias de corte:
+\begin{equation}
+    V_{out}=7.48V\cdot10^{\frac{-3}{20}}\lrah V_{out}=5,29V
+\end{equation}
+Se realizo el barrido de frecuencia obteniendo las siguientes tablas de datos.
+\begin{table}[H]
+\parbox{.45\textwidth}{  
+    \centering
+   \begin{tabular}{|c|c|c|}
+        \hline
+        $f$ [Hz] &  $V_{pp}$ & $GR_{dB}$\\
+        \hline
+         $500$&$7,48$&$0$\\ 
+         $250$&$7,40$&$-0.09$\\ 
+         $150$&$7,40$&$-0.09$\\ 
+         $100$&$7,32$&$-0.19$\\ 
+         $50$&$7,08$&$-0.48$\\
+         $30$&$6,92$&$-0.67$\\
+         $25$&$6,76$&$-0.88$\\
+         $20$&$6,52$&$-1.19$\\
+         $15$&$6,12$&$-1.74$\\
+         $13$&$5,96$&$-1.97$\\
+         $11$&$5,46$&$-2.73$\\
+         $10$&$5,28$&$-3.02$\\
+         \hline
+    \end{tabular}
+    \caption{Barrido descendente}
+    \label{tab:RF-LACinf}
+    }
+    \parbox{.45\textwidth}{
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $f$ [kHz] &  $V_{pp}$&$GR_{dB}$\\
+        \hline
+         $30$&$7,48$&$0$\\ 
+         $50$&$7,50$&$0.05$\\ 
+         $100$&$7,46$&$0.05$\\ 
+         $150$&$7,44$&$0.05$\\
+         $250$&$7,40$&$-0.09$\\
+         $350$&$7,36$&$-0.14$\\
+         $400$&$7,32$&$-0.19$\\
+         $500$&$7,24$&$-0.28$\\
+         $700$&$7,00$&$-0.58$\\
+         $1000$&$6,47$&$-1.26$\\
+         $1500$&$5,66$&$-2.42$\\
+         $1770$&$5,28$&$-3.02$\\
+         \hline
+    \end{tabular}
+    \caption{Barrido ascendente}
+    \label{tab:RF-LACsup}
+    }
+\end{table}
+De las tablas \ref{tab:RF-LACinf} y \ref{tab:RF-LACsup} se obtuvieron ambas frecuencias de corte. La frecuencia de corte inferior es de $F_{CCinf}=10_{Hz}$ y la frecuencia de corte superior es de $F_{CCsup}=1.773_{MHz}$. Esto da como resultado un ancho de banda de:
+\begin{equation*}
+    AB_{LC} = F_{CCsup}-F_{CCinf}\lrah AB_{LA}=1.77299 MHz
+\end{equation*}
+\begin{figure}[H]
+    \centering
+    \input{Plots/Exp7/RFC}
+    \caption{Respuesta en frecuencia de ganancia relativa a lazo cerrado}
+    \label{fig:RFC}
+\end{figure}
+
+Como es de esperar, el amplificador en la configuración de lazo abierto pose un menor ancho de banda que a lazo cerrado, pero la ganancia se reduce en comparación. Sabiendo cuales eran los niveles de tensión de la señales de entrada para ambas configuraciones, podemos comparar amabas curvas y comprobar su ancho de banda y ganancia.
+\begin{figure}[H]
+    \centering
+    \input{Plots/Exp7/RFcomp}
+    \caption{Comparación de las respuestas en frecuencia}
+    \label{fig:RFcomp}
+\end{figure}
+Cabe aclarar que las lineas punteadas en el gráfico \ref{fig:RFcomp} son aproximaciones relevadas por la información obtenida en los pasos anteriores y por el comportamiento esperado de un amplificador de este tipo.

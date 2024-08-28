@@ -1,0 +1,54 @@
+\begin{tikzpicture}[scale=1]
+\def\scal{6/10}
+\def\des{12}
+    
+    %datosLineaA
+    \coordinate (a1) at (1,21.3*\scal-\des*\scal);
+    \coordinate (a2) at (2,19.83*\scal-\des*\scal);
+    \coordinate (a3) at (3,18.55*\scal-\des*\scal);
+    \coordinate (a4) at (4,17.42*\scal-\des*\scal);
+    \coordinate (a5) at (5,16.43*\scal-\des*\scal);
+    \coordinate (a6) at (6,15.54*\scal-\des*\scal);
+    \coordinate (a7) at (7,14.74*\scal-\des*\scal);
+    \coordinate (a8) at (8,14.02*\scal-\des*\scal);
+    \coordinate (a9) at (9,13.37*\scal-\des*\scal);
+    \coordinate (a10) at (10,12.78*\scal-\des*\scal);
+
+    %Ejex
+    \draw[->] (0,0)--(11,0) node[midway,below={5mm}] {Medición};
+    \foreach \x in {0,1,2,...,11}{
+        \draw[line width=1pt,gray!40] (\x,0) -- (\x,6);
+        \draw[shift={(\x,0)}] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    }
+    %Linea A
+    \foreach \c in {1,...,10}{
+        \draw[line width=1pt,gray!40] let \p1 = (a\c)in (11,\y1)--(0,\y1);
+        \draw[] let \p1= (a\c)in (2pt,\y1) -- (-2pt,\y1);
+   }
+    \foreach \x  in {1,...,10}{
+        \draw[line width=2pt,fill=black] (a\x) circle(1pt);
+   }
+   \foreach \x [evaluate={\y=int(\x+1);}] in {1,...,9}{
+        \draw[line width=1pt,black] (a\x) -- (a\y);
+   }
+
+   
+    %Ejey
+    \draw[->] (0,0)--(0,6) node[midway,sloped,above={15mm}]{Relación error};
+    \foreach \c in {1,2,4,6,10}{
+        
+    }
+    
+   \draw[] let \p1= (a1)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $21.30$};
+   \draw[] let \p1= (a2)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $19.83$};
+   \draw[] let \p1= (a3)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $18.55$};
+   \draw[] let \p1= (a4)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $17.42$};
+   \draw[] let \p1= (a5)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $16.43$};
+   \draw[] let \p1= (a6)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $15.54$};
+   \draw[] let \p1= (a7)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $14.74$};
+   \draw[] let \p1= (a8)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $14.02$};
+   \draw[] let \p1= (a9)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $13.37$};
+   \draw[] let \p1= (a10)in (2pt,\y1) -- (-2pt,\y1) node[left] {\footnotesize $12.78$};
+
+ 
+\end{tikzpicture}

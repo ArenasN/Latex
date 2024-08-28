@@ -1,0 +1,29 @@
+\input{Formato/Lib}
+
+%Caratula
+\newcommand{\subtitledoc}[1]{\newcommand{\@subtitledoc}{#1}}
+\newcommand{\instituto}[1]{\newcommand{\@instituto}{#1}}
+\newcommand{\carrera}[1]{\newcommand{\@carrera}{#1}}
+\newcommand{\professor}[1]{\newcommand{\@professor}{#1}}
+\newcommand{\catedra}[1]{\newcommand{\@catedra}{#1}}
+\newcommand{\curso}[1]{\newcommand{\@curso}{#1}}
+\newcommand{\legajo}[1]{\newcommand{\@legajo}{#1}}
+\newcommand{\footerauthor}[1]{\newcommand{\@footerauthor}{#1}}
+\newcommand{\footerlegajo}[1]{\newcommand{\@footerlegajo}{#1}}
+\newcommand{\footercatedra}[1]{\newcommand{\@footercatedra}{#1}}
+
+%Indice
+\newcommand{\unsection}[1]{\addcontentsline{toc}{section}{#1}\section*{#1}}
+\newcommand{\unsubsection}[1]{\addcontentsline{toc}{subsection}{#1}\subsection*{#1}}
+\newcommand{\unsubsubsection}[1]{\addcontentsline{toc}{subsubsection}{#1}\subsubsection*{#1}}
+
+%Custom
+\newcommand{\longdiv}{\smash{\mkern-0.43mu\vstretch{1.31}{\hstretch{.7}{)}}\mkern-5.2mu\vstretch{1.31}{\hstretch{.7}{)}}}}
+\newcommand{\lrah}{\hspace{0.25cm} \Longrightarrow \hspace{0.25cm}}
+\newcommand{\llah}[1]{\hspace{0.25cm} \Longleftarrow \hspace{0.25cm}}
+\newcommand{\llrah}[1]{\hspace{0.25cm} \Longleftrightarrow \hspace{0.25cm}}
+\newcommand{\Real}[1]{\mathbb{R}{e}\{#1\}}
+\newcommand{\Imag}[1]{\mathbb{I}{m}\{#1\}}
+\newcommand{\arc}[1]{{%
+    \setbox9=\hbox{#1}%
+    \ooalign{\resizebox{\wd9}{\height}{\texttoptiebar{\phantom{A}}}\cr#1}}}

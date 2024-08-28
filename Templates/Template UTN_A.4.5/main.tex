@@ -1,0 +1,49 @@
+\input{Formato/formato}
+
+%PROBLEMAS ALINEADO DE TEXTO EN CARATULA AÑADIR \bigskip O \smallskips A CONVENIENCIA EN EL ARCHIVO formato.tex SECCION "CARtext"
+%PROBLEMAS SUPERPOSICION DE TEXTO ENCABEZADO MODIFICAR TAMAÑO DE MINIPAGE EN EL ARCHIVO formato.tex SECCION "ENCAtext"
+%COMANDOS COSTUM LEER ARCHIVO "comands.tex"
+%GRAFICOS DE EJEMPLO PARAMETRIZADOS EN "\Plots\Ejemplos"
+
+\instituto{Universidad Tecnológica Nacional\\Facultad Regional Córdoba}
+\carrera{Ingeniería Electrónica}
+\catedra{XXXXXXXXX}
+\curso{XRX}
+\title{XXXXXXX}
+\subtitledoc{XXXXXXX}
+\professor{
+    XXXXXXXXX
+    \par
+    XXXXXXXXX
+}
+
+\author{
+        XXXXXXXX
+        \par
+        XXXXXXXX
+
+}
+\legajo{
+        XXXXX
+        \par
+        XXXXX
+}
+\footerauthor{XXXXX, XXXXX}
+\footerlegajo{XXXXX, XXXXX}
+\date{\the\year}
+\footercatedra{XXXXX}%EVITAR SOLAPAMINETO EN ENCABEZADO
+
+
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+%CARGARA ARCHIVOS ".tex" CORRESPONDIENTES A SECCIONES DEL ARCHIVO !!!SOLO USAR \input{}!!!
+
+\input{Chapters/Cap1}
+
+
+\end{document}

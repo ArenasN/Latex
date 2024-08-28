@@ -1,0 +1,15 @@
+\begin{tikzpicture}[scale=1.5]
+\begin{axis}[
+    %Set up de la zona graficada y restriciones
+    unbounded coords=jump,
+    z filter/.expression={
+        z>20 ? nan : z
+    }
+]%Vista
+    view=[{110}{15}]
+    %Grafica con variable dependiente "z"
+    \addplot3[surf,]{sqrt((-x/(x^2+y^2))^2+(y/(x^2+y^2))^2)};
+
+\end{axis}
+\end{tikzpicture}
+\caption*{Superficie en 3d}

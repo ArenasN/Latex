@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+\def\scal{0.8};% Escala 
+\def\const{1.5};% Dimension principal
+\node (h) at (0,5) {};
+% Propios
+\sumsen{0}{0}{+}{-}{}{}{a};% sumador {x}{y}{+/-}{+/-}{+/-}{+/-}{Nombre}
+
+\multsen{8}{-1.5}{c}; % multiplicador {x}{y}{nombre}
+\ampli{2}{0}{d};% Ampli {x}{y} {nombre}
+
+\sumsen{6}{-1.5}{}{+}{}{+}{b};
+ 
+ 
+ %\node[regular polygon, regular polygon sides=3, minimum size=1.5cm, draw,rotate=-90] at (4,5){};%Buffer
+
+
+
+\draw (a.east) -- (d.north west);
+\draw (d.south west) -| (0,-\const);
+\draw (d.apex) -| (b.north) ;
+\draw (b.east) |- (c.150);
+\draw (a.west) -- (-1,0) node[midway,above]{$y_{ref}$};
+
+
+
+
+\end{tikzpicture}
+\caption*{Algo\idk}

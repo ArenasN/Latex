@@ -1,0 +1,47 @@
+El Trabajo practico realizado nos sirvió para darnos cuenta que las mediciones que a diario realizamos con instrumentos están afectadas por un error, el cual muchas veces puede llegar a ser un error muy significativo, obligando a realizar las mediciones nuevamente.
+Esto nos lleva a la conclusión de que es imposible trabajar con una exactitud del 100\%, ya que siempre hay un error implícito en el instrumento. 
+
+Al momento de realizar la contrastación de un multimetro analógico, debido a que la obtención los datos de una medición en este tipo de instrumentos depende mucho de la habilidad del operario, es necesario que se haga una doble pasada, una hacia arriba (de 0 a 10V) y otra hacia abajo (de 10 a 0V), ya que esto nos daría una mayor exactitud en la determinación del máximo error del instrumento. 
+Además, el procedimiento de contrastación se podría mejorar realizando un mayor número de series de pasadas y realizando un promedio de los valores obtenidos,  mejorando así la precisión a la hora de obtener el error de dicho instrumento. 
+
+Una vez terminado el proceso de constrastacion, vemos que el valor de la clase del instrumento constrastado que calculamos, es bastante similar al valor que expresa el manual del fabricante. 
+Este procedimiento, a nuestro parecer, debería realizarse frecuentemente, ya que al ser un instrumento mecánico, cualquier golpe, deterioro de sus partes o mal uso, podría producir una variación de la exactitud del mismo. 
+
+En el Taller de mantenimiento del laboratorio, se nos comento que cada año se realizan contrastaciones de los instrumentos para comprobar su exactitud, y que la última de estas había tenido lugar el mes de marzo de este año.  
+
+En el laboratorio central de electrónica, de la UTN-FRC, se cuenta con los siguientes dispositivos que pueden ser utilizados como patrón para realizar contrastaciones y calibraciones:
+\begin{itemize}
+    \item Osciloscopio UNI-T UTD 2102CEX cuya exactitud en medición de tensión continua es ±(4\% × lectura+0,1 grilla+1mV) seleccionando 2mV/div o 5mV/div.
+    \item Multimetro LCR Agilent U1733C cuya especificación de exactitud en medición de resistencias es de (0,7\% +8) en el rango de 20\ohm
+    \item Multimetro UNI-T UT70A cuya precision de voltaje DC de +/- (0,5\%+1) en el rango de 20V. 
+\end{itemize}
+
+
+Por otro lado, con la experiencia numero 2 pudimos demostrar cómo mejora la medición de resistencias con el método de medición a cuatro puntos. Este método es útil cuando las resistencias a medir son pequeñas, ya que elimina las contribuciones de las resistencias del  cableado y los potenciales de contacto sobre la medición final, lo que permite obtener mediciones con mayor precisión que usando el método convencional a dos puntas. 
+
+Para corroborar la exactitud de este método se podría haber utilizado un instrumento llamado caja de resistencias precisión, el cual esta formado por un conjunto de resistencias configuradas en un arreglo que permite seleccionar un valor con alta precisión. Estos normalmente se utilizan en entornos de laboratorio, calibración y pruebas, donde se requiere un control exacto de la resistencia en un circuito. 
+
+Para comprobar el verdadero valor de resistencia de la probeta que se utilizo en la experimentación 2, se puede emplear algunos multímetros de precisión como los siguientes: 
+\begin{itemize}
+    \item Fluke 8508A: La precisión de medición de resistencia del Fluke 8508A es de ±7,5 ppm de la lectura.
+    \item Keysight (Agilent) 34420A: Ofrece una precisión básica de resistencia del (0.0025\% + 0.002)
+    \item Rohde - Schwarz HMC8012: El HMC8012 ofrece una precisión básica de (±0.015\% + 0.002).
+\end{itemize}
+
+Para  realizar el método de cuatro puntos en la medición de la probeta, se utilizó una fuente de corriente que funciona con un circuito integrado LM 317, el cual es un regulador de voltaje lineal ajustable que proporciona una salida de voltaje estable y precisa, independientemente de las variaciones en la entrada de voltaje y la carga, permitiendo al usuario ajustar la salida a un valor deseado.
+
+Una vez realizada la medición, el calculo de la incertidumbre del valor de la resistencia, va a estar afectada por los errores de las mediciones implicadas. Por lo tanto para realizar dicho calculo es necesario tener en cuenta la incertidumbre relativa en las mediciones de corriente y tensión. La formula a utilizada es la siguiente:  
+
+\begin{equation}
+    \frac{\Delta R}{R} = \frac{\Delta V}{V} + \frac{\Delta I}{I}
+    \label{sumaErr}
+\end{equation}
+
+Sin embargo, muchos autores consideran que para obtener una mejor estimación de este valor de incertidumbre, muchas veces es preferible utilizar el método de suma cuadrática de incertidumbres. Este método se utiliza cuando se tienen varias fuentes de error que contribuyen a la incertidumbre total y se consideran independientes entre sí, y se calcula efectuando la raíz cuadrada de la suma de los cuadrados de los errores parciales. 
+
+\begin{equation}
+    \frac{\Delta x}{x} = \sqrt{{\frac{\Delta y}{y}}^2 + {\frac{\Delta z}{z}}^2} 
+    \label{sumaErr}
+\end{equation}
+
+Es importante tener en cuenta que cada error parcial debe estar expresado en las mismas unidades que la cantidad medida para que la suma sea coherente. Además, este método solo proporciona una estimación de la incertidumbre y no tiene en cuenta otros factores, como las correlaciones entre los errores o las distribuciones de probabilidad de los errores.
